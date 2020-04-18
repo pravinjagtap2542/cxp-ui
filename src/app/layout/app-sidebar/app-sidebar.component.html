@@ -36,7 +36,7 @@
     <!-- <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button> -->
     <a><img src="{{settings.getAssetsUrl()}}images/avaya-logo-white.svg"></a>
 
-<button  mat-icon-button [matMenuTriggerFor]="appMenu">
+<button  mat-icon-button [matMenuTriggerFor]="appMenu" class="rightHeader">
   <mat-icon>more_vert</mat-icon>
   <mat-menu #appMenu="matMenu">
   <ng-template matMenuContent let-name="name">
@@ -54,36 +54,41 @@
     <mat-sidenav [ngClass]="{'full-sidenav': !showFiller }" #snav [mode]="mobileQuery.matches ? 'over' : 'push'"
                  [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" [opened]="true">
       <mat-nav-list>
-        <a mat-list-item>
+        <a mat-list-item class="closeMenu">
           <mat-icon *ngIf="showFiller" (click)="showFiller = false">menu</mat-icon>
           <mat-icon *ngIf="!showFiller" (click)="showFiller = true">close</mat-icon>
         </a>
         <a mat-list-item class="mat-list-item-active">
           <mat-icon>account_circle</mat-icon>
-          <span class="nav-text" *ngIf="!showFiller">
+          <!-- <span class="nav-text" *ngIf="!showFiller">
           Edit My Profile
-          </span>
+          </span> -->
+          <div class="text_NavMenu">
+            <span class="nav-text">
+            Edit My Profile
+            </span>
+          </div>
           <i *ngIf="!showFiller" class="material-icons text-right">keyboard_arrow_right</i>
         </a>
         <a mat-list-item class="mat-list-item-inactive">
           <mat-icon>supervised_user_circle</mat-icon>
-          <span class="nav-text" *ngIf="!showFiller">
+          <div class="text_NavMenu"><span class="nav-text">
           User Management
-          </span>
+          </span></div>
           <i *ngIf="!showFiller" class="material-icons text-right">keyboard_arrow_right</i>
         </a>
         <a mat-list-item class="mat-list-item-inactive">
           <mat-icon>search</mat-icon>
-          <span class="nav-text" *ngIf="!showFiller">
+          <div class="text_NavMenu"><span class="nav-text">
           Search
-          </span>
+          </span></div>
           <i *ngIf="!showFiller" class="material-icons text-right">keyboard_arrow_right</i>
         </a>
         <a mat-list-item class="mat-list-item-inactive">
           <mat-icon>supervised_user_circle</mat-icon>
-          <span class="nav-text" *ngIf="!showFiller">
+          <div class="text_NavMenu"><span class="nav-text">
           Tools
-          </span>
+          </span></div>
           <i *ngIf="!showFiller" class="material-icons text-right">keyboard_arrow_right</i>
         </a>
       </mat-nav-list>
