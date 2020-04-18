@@ -12,7 +12,7 @@ export class SettingService {
     if (isDevMode()) {
         return this.assetsUrl = '/assets/';
     } else {
-        return this.assetsUrl = 'readynow/static/assets/';
+        return this.assetsUrl = './assets/';
     }
 }
 
