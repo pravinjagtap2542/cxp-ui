@@ -63,3 +63,52 @@ mat-sidenav{
     /* right: 5px; */
     left: 92%;
 }
+
+ul.submenuOnHover li {
+  list-style: none;
+}
+ul.submenuOnHover {
+  position: absolute;
+  z-index: 9999;
+    /* left: 197px; */
+    right: -200px;
+    background: grey;
+    margin-left: 0;
+    padding-left: 0;
+    padding: 10px;
+    width: 200px;
+    top: 0px;
+    display: none;
+}
+ul.submenuOnHover li {
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 12px;
+  position: relative;
+}
+ul.submenuOnHover li>ul{
+  position: absolute;
+  z-index: 9999;
+    /* left: 197px; */
+    right: -200px;
+    background: grey;
+    margin-left: 0;
+    padding-left: 0;
+    padding: 10px;
+    width: 200px;
+    top: 0px;
+  right: -210px;
+  display: none;
+}
+ul.submenuOnHover li:hover ul.childsubmenuOnHover{
+  display: block;
+}
+ul.submenuOnHover li i {
+  position: absolute;
+  right: 0;
+  top: 8px;
+  font-size: 18px;
+}
+mat-sidenav.mat-drawer.mat-sidenav a:hover ul.submenuOnHover{
+  display: block;
+}
