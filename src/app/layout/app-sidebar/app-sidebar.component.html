@@ -1,0 +1,152 @@
+<!-- <div class="sidebar">
+  <ul class="app-sidebar nav">
+   <li class="nav-divider p-3 active active_link">
+        <a  routerLinkActive="active active_link_text">
+          <span>
+            Edit My Profile
+          </span>
+        </a>
+      </li>
+      <li class="nav-divider p-3 active inactive_link">
+        <a  routerLinkActive="active active_link_text">
+          <span>
+            User Management
+          </span>
+        </a>
+      </li>
+      <li class="nav-divider p-3 active inactive_link">
+        <a  routerLinkActive="active active_link_text">
+          <span>
+            Search
+          </span>
+        </a>
+      </li>
+      <li class="nav-divider p-3 active inactive_link">
+        <a  routerLinkActive="active active_link_text">
+          <span>
+            Tools
+          </span>
+        </a>
+      </li>
+  </ul>
+</div> -->
+
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <!-- <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button> -->
+    <a><img src="{{settings.getAssetsUrl()}}images/avaya-logo-white.svg"></a>
+
+<button  mat-icon-button [matMenuTriggerFor]="appMenu" class="rightHeader">
+  <mat-icon>more_vert</mat-icon>
+  <mat-menu #appMenu="matMenu">
+  <ng-template matMenuContent let-name="name">
+    <button mat-menu-item>Home</button>
+    <button mat-menu-item>Log Out</button>
+    <button mat-menu-item>Help</button>
+  </ng-template>
+</mat-menu>
+</button>
+
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container"
+                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0" autosize [hasBackdrop]="false">
+    <mat-sidenav [ngClass]="{'full-sidenav': !showFiller }" #snav [mode]="mobileQuery.matches ? 'over' : 'push'"
+                 [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" [opened]="true">
+      <mat-nav-list>
+        <a mat-list-item class="closeMenu">
+          <mat-icon *ngIf="showFiller" (click)="showFiller = false">menu</mat-icon>
+          <mat-icon *ngIf="!showFiller" (click)="showFiller = true">close</mat-icon>
+        </a>
+        <a mat-list-item class="mat-list-item-active">
+          <mat-icon>account_circle</mat-icon>
+          <!-- <span class="nav-text" *ngIf="!showFiller">
+          Edit My Profile
+          </span> -->
+          <div class="text_NavMenu">
+            <span class="nav-text">
+            Edit My Profile
+            </span>
+          </div>
+          <i *ngIf="!showFiller" class="material-icons text-right">keyboard_arrow_right</i>
+        </a>
+        <a mat-list-item class="mat-list-item-inactive">
+          <mat-icon>supervised_user_circle</mat-icon>
+          <div class="text_NavMenu"><span class="nav-text">
+          User Management
+          </span></div>
+          <i *ngIf="!showFiller" class="material-icons text-right">keyboard_arrow_right</i>
+        </a>
+        <a mat-list-item class="mat-list-item-inactive">
+          <mat-icon>search</mat-icon>
+          <div class="text_NavMenu"><span class="nav-text">
+          Search
+          </span></div>
+          <i *ngIf="!showFiller" class="material-icons text-right">keyboard_arrow_right</i>
+        </a>
+        <a mat-list-item class="mat-list-item-inactive">
+          <mat-icon>supervised_user_circle</mat-icon>
+          <div class="text_NavMenu"><span class="nav-text">
+          Tools
+          </span></div>
+          <i *ngIf="!showFiller" class="material-icons text-right">keyboard_arrow_right</i>
+        </a>
+      </mat-nav-list>
+      
+      
+      <!-- <button mat-button [matMenuTriggerFor]="animals">Animal index</button>
+
+<mat-menu #animals="matMenu" xPosition="after">
+  <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+  <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+</mat-menu>
+
+<mat-menu #vertebrates="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
+  <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
+  <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
+  <button mat-menu-item>Birds</button>
+  <button mat-menu-item>Mammals</button>
+</mat-menu> -->
+
+<!-- <mat-menu #invertebrates="matMenu">
+  <button mat-menu-item>Insects</button>
+  <button mat-menu-item>Molluscs</button>
+  <button mat-menu-item>Crustaceans</button>
+  <button mat-menu-item>Corals</button>
+  <button mat-menu-item>Arachnids</button>
+  <button mat-menu-item>Velvet worms</button>
+  <button mat-menu-item>Horseshoe crabs</button>
+</mat-menu>
+
+<mat-menu #fish="matMenu">
+  <button mat-menu-item>Baikal oilfish</button>
+  <button mat-menu-item>Bala shark</button>
+  <button mat-menu-item>Ballan wrasse</button>
+  <button mat-menu-item>Bamboo shark</button>
+  <button mat-menu-item>Banded killifish</button>
+</mat-menu> -->
+
+<!-- <mat-menu #amphibians="matMenu">
+  <button mat-menu-item>Sonoran desert toad</button>
+  <button mat-menu-item>Western toad</button>
+  <button mat-menu-item>Arroyo toad</button>
+  <button mat-menu-item>Yosemite toad</button>
+</mat-menu>
+
+<mat-menu #reptiles="matMenu">
+  <button mat-menu-item>Banded Day Gecko</button>
+  <button mat-menu-item>Banded Gila Monster</button>
+  <button mat-menu-item>Black Tree Monitor</button>
+  <button mat-menu-item>Blue Spiny Lizard</button>
+  <button mat-menu-item disabled>Velociraptor</button>
+</mat-menu> -->
+
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <mat-card>Simple card</mat-card>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
