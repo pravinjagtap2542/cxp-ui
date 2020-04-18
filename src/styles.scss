@@ -86,3 +86,7 @@ a.mat-list-item.closeMenu {
 a.mat-list-item.mat-list-item-active .mat-icon, a.mat-list-item.mat-list-item-inactive .mat-icon{
   color: #ffffff;
 }
+.mat-drawer, .mat-drawer-inner-container {
+  overflow-y: initial !important;
+  overflow: initial !important;
+}
