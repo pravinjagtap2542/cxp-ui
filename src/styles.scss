@@ -224,3 +224,6 @@ mat-sidenav.mat-drawer.mat-sidenav a:hover ul.submenuOnHover {
 //     margin-left: 0 !important;
 //     position: relative;
 // }
+.full-sidenavFooter .av-footer {
+    width: calc(100% - 221px) !important;
+}
