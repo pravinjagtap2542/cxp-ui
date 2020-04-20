@@ -78,6 +78,9 @@ mat-sidenav.mat-drawer.mat-sidenav.full-sidenav {
         position: static;
         margin-top: -5px;
     }
+    .item-link {
+        border-bottom: 1px solid #e9e8e8 !important;
+    }
 }
 
 a.mat-list-item.mat-list-item-active .mat-icon,
@@ -214,10 +217,10 @@ mat-sidenav.mat-drawer.mat-sidenav a:hover ul.submenuOnHover {
     display: block;
 }
 
-.item-link {
-    border-bottom: 1px solid #e9e8e8 !important;
-}
-
 * {
     outline: none !important;
 }
+// mat-sidenav-content.mat-drawer-content.mat-sidenav-content {
+//     margin-left: 0 !important;
+//     position: relative;
+// }
