@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { SettingService } from '../../shared/services/setting.service';
@@ -17,7 +17,9 @@ import { filter } from 'rxjs/operators';
 export class AppSidebarComponent implements OnInit, OnDestroy {
 
   mobileQuery: MediaQueryList;
-  showFiller = false;
+  @Input() showFiller: any = false;
+  @Output() showFillerChanged = new EventEmitter<any>();
+
   private _mobileQueryListener: () => void;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public settings: SettingService) {
